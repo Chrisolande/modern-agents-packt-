@@ -11,4 +11,5 @@ dependencies = [
     "langgraph-supervisor>=0.0.31",
     "numpy>=2.5.0",
     "pandas>=3.0.3",
+    "scikit-learn>=1.9.0",
 ]

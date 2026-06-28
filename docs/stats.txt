@@ -1,0 +1,311 @@
+# Foundations of Statistics: A Comprehensive Overview
+
+## 1. What Is Statistics?
+
+Statistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. It provides the mathematical tools needed to make sense of uncertainty and variability in the world. At its core, statistics allows us to draw conclusions about large populations by examining smaller samples, and to quantify how confident we are in those conclusions.
+
+Statistics is broadly divided into two branches: descriptive statistics and inferential statistics. Descriptive statistics summarizes and describes the features of a dataset, while inferential statistics uses sample data to make generalizations about a larger population. Both branches are essential in scientific research, business analytics, medicine, engineering, and social sciences.
+
+---
+
+## 2. Descriptive Statistics
+
+Descriptive statistics are numerical and graphical tools used to summarize a dataset. The most fundamental descriptive measures are measures of central tendency and measures of spread.
+
+### 2.1 Measures of Central Tendency
+
+The **mean** is the arithmetic average of a dataset. It is computed by summing all values and dividing by the number of observations. The mean is sensitive to extreme values, called outliers, which can pull it away from the center of the data.
+
+The **median** is the middle value when data is sorted in ascending order. For datasets with an even number of observations, the median is the average of the two middle values. The median is robust to outliers and is preferred when data is skewed.
+
+The **mode** is the value that appears most frequently in a dataset. A dataset can have no mode, one mode (unimodal), two modes (bimodal), or multiple modes (multimodal). The mode is the only measure of central tendency applicable to nominal (categorical) data.
+
+### 2.2 Measures of Spread
+
+The **range** is the simplest measure of spread, computed as the difference between the maximum and minimum values. It is highly sensitive to outliers.
+
+The **variance** measures the average squared deviation of each data point from the mean. Population variance uses N in the denominator, while sample variance uses N-1 (Bessel's correction) to produce an unbiased estimate of the population variance.
+
+The **standard deviation** is the square root of the variance. It expresses spread in the same units as the original data, making it more interpretable than variance.
+
+The **interquartile range (IQR)** is the difference between the 75th percentile (Q3) and the 25th percentile (Q1). It describes the spread of the middle 50% of the data and is robust to outliers. The IQR is used to define outliers: a value is considered an outlier if it falls below Q1 - 1.5*IQR or above Q3 + 1.5*IQR.
+
+### 2.3 Shape of Distributions
+
+**Skewness** measures the asymmetry of a distribution. A distribution is positively skewed (right-skewed) when the tail extends to the right, pulling the mean above the median. It is negatively skewed (left-skewed) when the tail extends to the left.
+
+**Kurtosis** measures the heaviness of the tails relative to a normal distribution. A distribution with high kurtosis (leptokurtic) has heavier tails and a sharper peak. A distribution with low kurtosis (platykurtic) has lighter tails and a flatter peak. A normal distribution has kurtosis of 3, and excess kurtosis is computed as kurtosis minus 3.
+
+---
+
+## 3. Probability Theory
+
+Probability theory is the mathematical foundation of statistics. It quantifies uncertainty by assigning numerical values between 0 and 1 to the likelihood of events.
+
+### 3.1 Basic Probability Rules
+
+The **addition rule** states that the probability of event A or event B occurring is P(A) + P(B) - P(A and B). For mutually exclusive events, P(A and B) = 0, so the rule simplifies to P(A) + P(B).
+
+The **multiplication rule** states that the probability of both A and B occurring is P(A) * P(B|A), where P(B|A) is the conditional probability of B given A. If A and B are independent, P(B|A) = P(B), and the rule simplifies to P(A) * P(B).
+
+**Conditional probability** is the probability of an event given that another event has occurred. It is defined as P(A|B) = P(A and B) / P(B).
+
+### 3.2 Bayes' Theorem
+
+Bayes' theorem relates the conditional probability of A given B to the conditional probability of B given A. It is expressed as:
+
+P(A|B) = [P(B|A) * P(A)] / P(B)
+
+In Bayesian statistics, P(A) is called the prior probability (belief before seeing data), P(B|A) is the likelihood (probability of the data given the hypothesis), and P(A|B) is the posterior probability (updated belief after seeing data). Bayes' theorem is the foundation of Bayesian inference, which treats model parameters as random variables with probability distributions rather than fixed unknown constants.
+
+### 3.3 Random Variables
+
+A **random variable** is a variable whose value is determined by the outcome of a random experiment. Discrete random variables take on a countable number of values, such as the number of heads in 10 coin flips. Continuous random variables can take any value in an interval, such as height or temperature.
+
+The **probability mass function (PMF)** describes the probability distribution of a discrete random variable. The **probability density function (PDF)** describes the distribution of a continuous random variable. For continuous variables, probabilities are computed as areas under the PDF curve, and the probability of any single exact value is zero.
+
+The **cumulative distribution function (CDF)** gives the probability that a random variable takes a value less than or equal to a given value. It is a non-decreasing function that ranges from 0 to 1.
+
+---
+
+## 4. Common Probability Distributions
+
+### 4.1 The Normal Distribution
+
+The normal distribution, also called the Gaussian distribution, is the most important distribution in statistics. It is symmetric and bell-shaped, fully characterized by its mean (μ) and standard deviation (σ). The notation N(μ, σ²) denotes a normal distribution with mean μ and variance σ².
+
+The **standard normal distribution** has mean 0 and standard deviation 1. Any normal random variable X can be standardized using the z-score: z = (X - μ) / σ. Z-scores express how many standard deviations a value is from the mean.
+
+The **68-95-99.7 rule** (empirical rule) states that approximately 68% of data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations.
+
+The normal distribution arises naturally through the **Central Limit Theorem (CLT)**, which states that the sampling distribution of the sample mean approaches a normal distribution as sample size increases, regardless of the shape of the original population distribution. This is one of the most powerful results in all of statistics.
+
+### 4.2 The Binomial Distribution
+
+The binomial distribution models the number of successes in n independent Bernoulli trials, each with probability p of success. Its mean is np and its variance is np(1-p). As n grows large, the binomial distribution approximates the normal distribution.
+
+### 4.3 The Poisson Distribution
+
+The Poisson distribution models the number of events occurring in a fixed interval of time or space, given a known average rate λ. Both the mean and variance of a Poisson distribution equal λ. It is used to model rare events such as the number of calls at a call center per hour, or the number of mutations in a DNA strand.
+
+### 4.4 The Exponential Distribution
+
+The exponential distribution models the time between events in a Poisson process. It has a single parameter λ (rate), with mean 1/λ and variance 1/λ². It is memoryless, meaning the probability of an event occurring in the next t units of time does not depend on how much time has already passed.
+
+### 4.5 The t-Distribution
+
+The t-distribution, also called Student's t-distribution, is similar to the normal distribution but has heavier tails. It is parameterized by degrees of freedom (df). As df increases, the t-distribution approaches the standard normal. The t-distribution is used when the population standard deviation is unknown and the sample size is small.
+
+### 4.6 The Chi-Squared Distribution
+
+The chi-squared distribution with k degrees of freedom is the distribution of the sum of k squared standard normal random variables. It is used in chi-squared tests for goodness of fit and tests of independence in contingency tables.
+
+### 4.7 The F-Distribution
+
+The F-distribution is the ratio of two independent chi-squared distributions divided by their respective degrees of freedom. It is used in analysis of variance (ANOVA) and in testing whether two populations have equal variances.
+
+---
+
+## 5. Sampling and Estimation
+
+### 5.1 Sampling Methods
+
+A **population** is the complete set of individuals or items of interest. A **sample** is a subset drawn from the population for study. Good sampling methods produce samples that are representative of the population.
+
+**Simple random sampling** gives every member of the population an equal chance of being selected. **Stratified sampling** divides the population into subgroups (strata) and samples from each stratum. **Cluster sampling** divides the population into clusters and randomly selects entire clusters. **Systematic sampling** selects every k-th element after a random start.
+
+Sampling bias occurs when the sample is not representative of the population. Common sources include selection bias, non-response bias, and voluntary response bias.
+
+### 5.2 Point Estimation
+
+A **point estimator** is a statistic used to estimate a population parameter. The sample mean x̄ is a point estimator of the population mean μ. A good estimator is **unbiased** (its expected value equals the true parameter), **consistent** (it converges to the true value as sample size grows), and **efficient** (it has the smallest variance among all unbiased estimators).
+
+The **maximum likelihood estimator (MLE)** is obtained by finding the parameter value that maximizes the likelihood function — the probability of observing the data given the parameter. MLEs are asymptotically unbiased and efficient under regularity conditions.
+
+### 5.3 Confidence Intervals
+
+A **confidence interval (CI)** provides a range of plausible values for a population parameter. A 95% CI means that if we repeated the study many times, approximately 95% of the constructed intervals would contain the true parameter value. It does NOT mean there is a 95% probability that the true value lies in any specific interval.
+
+For a population mean with known σ, the 95% CI is: x̄ ± 1.96 * (σ / √n). When σ is unknown, we replace σ with the sample standard deviation s and use the t-distribution: x̄ ± t* * (s / √n), where t* is the critical value from the t-distribution with n-1 degrees of freedom.
+
+The **margin of error** is the half-width of the confidence interval. It decreases as sample size increases, reflecting more precise estimation with more data.
+
+---
+
+## 6. Hypothesis Testing
+
+Hypothesis testing is a formal procedure for evaluating evidence against a null hypothesis using sample data.
+
+### 6.1 The Framework
+
+The **null hypothesis (H₀)** represents the status quo or no effect. The **alternative hypothesis (H₁)** represents the claim we want to test. We assume H₀ is true and ask: how likely is the observed data (or more extreme data) under this assumption?
+
+The **p-value** is the probability of observing a test statistic as extreme as the one computed from the sample, assuming H₀ is true. A small p-value provides evidence against H₀. The **significance level (α)** is a threshold chosen before the test, commonly 0.05. If p < α, we reject H₀.
+
+### 6.2 Type I and Type II Errors
+
+A **Type I error** (false positive) occurs when H₀ is true but we reject it. The probability of a Type I error equals α. A **Type II error** (false negative) occurs when H₀ is false but we fail to reject it. The probability of a Type II error is denoted β.
+
+**Statistical power** is 1 - β, the probability of correctly rejecting a false H₀. Power increases with larger sample size, larger effect size, and higher significance level.
+
+### 6.3 Common Tests
+
+The **one-sample t-test** tests whether a population mean differs from a hypothesized value. The **two-sample t-test** compares means from two independent groups. The **paired t-test** compares means from matched pairs.
+
+The **chi-squared test of independence** tests whether two categorical variables are associated in a contingency table. The **chi-squared goodness-of-fit test** tests whether observed frequencies match expected frequencies from a hypothesized distribution.
+
+**ANOVA (Analysis of Variance)** tests whether the means of three or more groups differ. It partitions total variability into variability between groups and within groups, producing an F-statistic.
+
+### 6.4 Multiple Testing Problem
+
+When many hypotheses are tested simultaneously, the probability of making at least one Type I error grows rapidly. If 100 independent tests are conducted at α = 0.05, about 5 will be falsely significant by chance. The **Bonferroni correction** addresses this by dividing α by the number of tests. The **Benjamini-Hochberg procedure** controls the false discovery rate (FDR), the expected proportion of rejected hypotheses that are false positives.
+
+---
+
+## 7. Linear Regression
+
+### 7.1 Simple Linear Regression
+
+Simple linear regression models the relationship between a response variable Y and a single predictor X as Y = β₀ + β₁X + ε, where β₀ is the intercept, β₁ is the slope, and ε is random error with mean zero and constant variance σ².
+
+The **ordinary least squares (OLS)** method estimates β₀ and β₁ by minimizing the sum of squared residuals. The resulting estimates are the Best Linear Unbiased Estimators (BLUE) under the Gauss-Markov assumptions: linearity, independence, homoscedasticity (constant variance), and normality of errors.
+
+The **coefficient of determination R²** measures the proportion of variance in Y explained by X. R² ranges from 0 to 1, with higher values indicating better fit. However, R² always increases when predictors are added, even irrelevant ones.
+
+### 7.2 Multiple Linear Regression
+
+Multiple linear regression extends simple regression to include multiple predictors: Y = β₀ + β₁X₁ + β₂X₂ + ... + βₖXₖ + ε. Each coefficient βⱼ represents the expected change in Y for a one-unit increase in Xⱼ, holding all other predictors constant.
+
+**Adjusted R²** penalizes for additional predictors and is preferred over R² for model comparison. **Multicollinearity** occurs when predictors are highly correlated, inflating standard errors and making coefficient estimates unstable. The **variance inflation factor (VIF)** quantifies multicollinearity; VIF > 10 is often considered problematic.
+
+### 7.3 Assumptions and Diagnostics
+
+Regression diagnostics check the assumptions of the model. **Residual plots** reveal patterns indicating non-linearity or heteroscedasticity. The **Q-Q plot** checks normality of residuals. **Cook's distance** identifies influential observations that have outsized leverage on the fitted model. Violations of assumptions can be addressed through transformations, robust regression, or generalized linear models.
+
+---
+
+## 8. Bayesian Statistics
+
+### 8.1 The Bayesian Paradigm
+
+In Bayesian statistics, parameters are treated as random variables with probability distributions rather than fixed unknown constants. The prior distribution P(θ) encodes beliefs about the parameter before seeing data. The likelihood P(data|θ) describes the data-generating process. The posterior distribution P(θ|data) is proportional to the prior times the likelihood, updated by Bayes' theorem.
+
+Bayesian inference produces a full posterior distribution over parameters, allowing probability statements about parameters directly. This contrasts with frequentist confidence intervals, which are statements about the procedure, not the parameter.
+
+### 8.2 Prior Distributions
+
+The choice of prior is a key design decision in Bayesian analysis. **Informative priors** incorporate genuine prior knowledge. **Weakly informative priors** regularize the model without dominating the likelihood. **Flat (non-informative) priors** attempt to let the data speak for itself, though truly non-informative priors are difficult to construct.
+
+**Conjugate priors** are mathematically convenient priors where the posterior belongs to the same family as the prior. For example, a Beta prior is conjugate to a Binomial likelihood, and a Normal prior is conjugate to a Normal likelihood with known variance.
+
+### 8.3 Markov Chain Monte Carlo (MCMC)
+
+For complex models, the posterior distribution cannot be computed analytically. **Markov Chain Monte Carlo (MCMC)** methods generate samples from the posterior by constructing a Markov chain that has the target posterior as its stationary distribution. The **Metropolis-Hastings algorithm** and **Gibbs sampling** are classical MCMC methods. **Hamiltonian Monte Carlo (HMC)**, implemented in probabilistic programming languages like Stan and PyMC, uses gradient information to explore the posterior more efficiently.
+
+**Posterior predictive checks** are a powerful diagnostic: simulate data from the fitted model and compare to observed data to detect model misspecification.
+
+---
+
+## 9. Non-Parametric Methods
+
+Non-parametric methods make fewer assumptions about the underlying distribution of the data and are useful when parametric assumptions are violated or data is ordinal.
+
+The **Wilcoxon rank-sum test** (Mann-Whitney U test) is a non-parametric alternative to the two-sample t-test. It tests whether two populations have the same distribution by comparing ranks. The **Wilcoxon signed-rank test** is the paired equivalent.
+
+The **Kruskal-Wallis test** is the non-parametric alternative to one-way ANOVA. The **Spearman rank correlation** is a non-parametric measure of monotonic association between two variables.
+
+**Kernel density estimation (KDE)** is a non-parametric method for estimating the probability density function of a random variable from data. It places a smooth kernel (often Gaussian) at each data point and sums them to produce a smooth density estimate. The **bandwidth** controls the smoothness: too small a bandwidth produces a noisy estimate (undersmoothing); too large produces an overly smooth estimate (oversmoothing). Bandwidth selection methods include Silverman's rule of thumb and cross-validation.
+
+**Bootstrap resampling** is a powerful non-parametric technique for estimating the sampling distribution of any statistic. It resamples with replacement from the observed data many times and computes the statistic on each resample. Bootstrap confidence intervals can be constructed without any distributional assumption about the population.
+
+---
+
+## 10. Experimental Design
+
+### 10.1 Principles of Experimental Design
+
+The three core principles of experimental design are **randomization**, **replication**, and **blocking**. Randomization ensures that treatment groups are comparable by distributing confounding variables evenly. Replication provides enough observations to estimate variability. Blocking groups experimental units by a known source of variability to reduce noise.
+
+A **randomized controlled trial (RCT)** is the gold standard for causal inference. Subjects are randomly assigned to treatment or control groups, ensuring that differences in outcomes can be attributed to the treatment.
+
+### 10.2 Factorial Designs
+
+Factorial designs study the effects of two or more factors simultaneously. A 2×2 factorial design, for example, tests two levels of each of two factors and all their combinations. This allows estimation of **main effects** (the effect of each factor alone) and **interaction effects** (whether the effect of one factor depends on the level of another).
+
+### 10.3 Power Analysis
+
+A power analysis determines the sample size needed to detect an effect of a given size with a desired level of power (typically 80% or 90%) at a given significance level. **Effect size** quantifies the magnitude of the difference: Cohen's d for means, Cohen's w for categorical data. Larger effects require smaller samples to detect; smaller effects require larger samples.
+
+---
+
+## 11. Causal Inference
+
+Correlation does not imply causation. Two variables may be associated due to a common cause (confounding), reverse causation, or chance. Causal inference provides a rigorous framework for moving from association to causation.
+
+The **potential outcomes framework** (Rubin Causal Model) defines the causal effect of a treatment for an individual as the difference between the outcome under treatment and the outcome under control. The fundamental problem of causal inference is that we can only observe one potential outcome per individual.
+
+**Directed acyclic graphs (DAGs)** provide a graphical representation of causal assumptions. They encode which variables are causes of which, and allow identification of confounders, mediators, and colliders. The **backdoor criterion** and **front-door criterion** identify adjustment sets needed to estimate causal effects from observational data.
+
+**Propensity score methods** estimate the probability of treatment given observed covariates (the propensity score) and use it to create comparable treatment and control groups. Matching, weighting, and stratification on the propensity score are common strategies.
+
+**Difference-in-differences (DiD)** compares the change in outcomes over time between a treated group and a control group, controlling for time trends and fixed differences between groups under the parallel trends assumption.
+
+**Instrumental variables (IV)** estimation uses a variable (instrument) that affects treatment but affects the outcome only through treatment. IV allows causal estimation even in the presence of unmeasured confounding.
+
+---
+
+## 12. Time Series Analysis
+
+A **time series** is a sequence of observations collected at successive points in time. Time series analysis accounts for the temporal dependence between observations, which violates the independence assumption of standard regression.
+
+**Stationarity** is a key assumption: a stationary time series has constant mean, variance, and autocovariance over time. The **Augmented Dickey-Fuller (ADF) test** tests for a unit root (non-stationarity). Non-stationary series are often made stationary by differencing.
+
+**Autocorrelation** measures the correlation of a time series with a lagged version of itself. The **autocorrelation function (ACF)** and **partial autocorrelation function (PACF)** are used to identify the order of ARIMA models.
+
+**ARIMA (Autoregressive Integrated Moving Average)** models combine autoregressive terms (dependence on past values), differencing (to achieve stationarity), and moving average terms (dependence on past forecast errors). The model is denoted ARIMA(p, d, q), where p is the AR order, d is the degree of differencing, and q is the MA order.
+
+**Seasonal decomposition** separates a time series into trend, seasonal, and remainder components. The **STL decomposition** (Seasonal and Trend decomposition using Loess) is a flexible and robust method for this.
+
+**State space models** and the **Kalman filter** provide a general framework for time series modeling that handles missing data, time-varying parameters, and multiple sources of noise. **Bayesian Structural Time Series (BSTS)** models incorporate Bayesian inference into state space models, allowing uncertainty quantification and variable selection through spike-and-slab priors on regression components.
+
+---
+
+## 13. Model Selection and Regularization
+
+### 13.1 The Bias-Variance Tradeoff
+
+The **bias-variance tradeoff** is a central concept in statistical learning. Bias is the error due to overly simplistic model assumptions. Variance is the error due to sensitivity to fluctuations in the training data. As model complexity increases, bias decreases but variance increases. The optimal model minimizes total expected error, which is bias² + variance + irreducible noise.
+
+**Overfitting** occurs when a model learns the noise in the training data and performs poorly on new data. **Underfitting** occurs when a model is too simple to capture the true pattern.
+
+### 13.2 Cross-Validation
+
+**Cross-validation** estimates model performance on unseen data. **k-fold cross-validation** divides data into k folds, trains on k-1 folds, and evaluates on the remaining fold, repeating k times and averaging the results. **Leave-one-out cross-validation (LOOCV)** uses each observation as a single test set.
+
+### 13.3 Information Criteria
+
+**AIC (Akaike Information Criterion)** and **BIC (Bayesian Information Criterion)** balance model fit against complexity. AIC = 2k - 2ln(L), where k is the number of parameters and L is the maximized likelihood. BIC = k*ln(n) - 2ln(L), which penalizes complexity more heavily than AIC. Lower values are better. BIC tends to select simpler models than AIC.
+
+### 13.4 Regularization
+
+**Regularization** adds a penalty to the loss function to discourage overly complex models. **Ridge regression (L2)** adds a penalty proportional to the sum of squared coefficients, shrinking coefficients toward zero without setting any to exactly zero. **Lasso regression (L1)** adds a penalty proportional to the sum of absolute values of coefficients, performing automatic variable selection by setting some coefficients exactly to zero. **Elastic net** combines L1 and L2 penalties.
+
+---
+
+## 14. Resampling and Simulation
+
+The **bootstrap** generates an empirical sampling distribution by resampling with replacement from observed data. It can estimate standard errors and confidence intervals for any statistic without requiring analytical derivations.
+
+**Permutation tests** assess statistical significance by randomly reshuffling group labels many times and computing the test statistic each time, producing an empirical null distribution. They are exact, distribution-free tests that are particularly useful when parametric assumptions are in doubt.
+
+**Monte Carlo simulation** uses random sampling to approximate quantities that are difficult to compute analytically. It is used in Bayesian posterior approximation, risk modeling, option pricing, and power analysis.
+
+---
+
+## 15. Communicating Statistical Results
+
+Statistical results must be communicated clearly and honestly. Effect sizes should always accompany p-values, as statistical significance and practical significance are distinct. A study with n = 1,000,000 may detect a trivially small effect as highly significant.
+
+Confidence intervals communicate both the direction and precision of an estimate and are more informative than p-values alone. Visualizations such as forest plots, raincloud plots, and posterior distribution plots convey uncertainty more intuitively than tables of numbers.
+
+Reproducibility is a core value in statistics. Analyses should be documented with code, data, and environment specifications so that others can independently verify results. Pre-registration of hypotheses and analysis plans guards against p-hacking and HARKing (Hypothesizing After Results are Known), which inflate false positive rates.
